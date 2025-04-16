@@ -1,31 +1,4 @@
-# Streamlit: Biblioteca principal para a criação de dashboards
-streamlit==1.18.0
-
-# Pandas: Biblioteca para manipulação de dados (DataFrames)
-pandas==1.5.3
-
-# Numpy: Biblioteca para operações numéricas e arrays
-numpy==1.24.2
-
-# Plotly: Biblioteca para gráficos interativos
-plotly==5.9.0
-
-# Matplotlib: Biblioteca para criação de gráficos estáticos (caso use gráficos adicionais)
-matplotlib==3.7.1
-
-# Seaborn: Biblioteca para gráficos estatísticos e avançados (caso use)
-seaborn==0.11.2
-
-# Requests: Biblioteca para fazer requisições HTTP (caso consuma dados de APIs externas)
-requests==2.28.2
-
-# SQLAlchemy: Biblioteca para trabalhar com bancos de dados SQL
-sqlalchemy==2.0.5
-
-# Psycopg2: Biblioteca para interação com bancos de dados PostgreSQL
-psycopg2==2.9.6
-
-# gspread: Biblioteca para interagir com Google Sheets
-gspread==5.7.1
-
-# Openpyxl: Biblioteca para ler e
+streamlit
+pandas
+plotly
+numpy
