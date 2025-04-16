@@ -8,7 +8,7 @@ pandas==1.5.3
 numpy==1.24.2
 
 # Plotly: Biblioteca para gráficos interativos
-plotly==5.14.0
+plotly==5.9.0
 
 # Matplotlib: Biblioteca para criação de gráficos estáticos (caso use gráficos adicionais)
 matplotlib==3.7.1
