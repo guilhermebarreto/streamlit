@@ -1,3 +1,6 @@
+import os
+os.system('pip install plotly')  # Instala o plotly caso não esteja presente
+
 import streamlit as st
 import pandas as pd
 import plotly.express as px
@@ -52,46 +55,3 @@ fig_country = px.bar(
     country_group,
     x="Country",
     y="Value",
-    title="Country",
-    text="Formatted"
-)
-fig_country.update_traces(textposition="outside")
-fig_country.update_layout(yaxis_title="Value", xaxis_title="Country", yaxis_tickformat=",")
-st.plotly_chart(fig_country, use_container_width=True)
-
-### Chart 2 - Product
-product_group = df_filtered.groupby("Product")["Value"].sum().reset_index().sort_values(by="Value", ascending=False).head(10)
-product_group["Formatted"] = product_group["Value"].apply(format_mi)
-
-fig_product = px.bar(
-    product_group,
-    x="Product",
-    y="Value",
-    title="Product",
-    text="Formatted"
-)
-fig_product.update_traces(textposition="outside")
-fig_product.update_layout(yaxis_title="Value", xaxis_title="Product", yaxis_tickformat=",")
-st.plotly_chart(fig_product, use_container_width=True)
-
-### Chart 3 - Timeline - Smoothed line
-timeline_group = df_filtered.groupby("Year")["Value"].sum().reset_index()
-timeline_group["Formatted"] = timeline_group["Value"].apply(format_mi)
-
-# Suavizar usando interpolação spline (curva suave)
-fig_timeline = px.line(
-    timeline_group,
-    x="Year",
-    y="Value",
-    title="Timeline - Energy Production",
-    text="Formatted",
-)
-fig_timeline.update_traces(textposition="top center", mode="lines+markers")
-fig_timeline.update_layout(
-    yaxis_title="Value",
-    xaxis_title="Year",
-    yaxis_tickformat=",",
-    hovermode="x unified"
-)
-fig_timeline.update_traces(line_shape="spline")  # <- Suaviza a linha
-st.plotly_chart(fig_timeline, use_container_width=True)
